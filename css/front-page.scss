@@ -1,0 +1,124 @@
+@import "variables.css";
+
+body#front-page-body {
+    background-color: #111;
+}
+
+#background,
+#front-page {
+    height: 100%;
+    width: 100%;
+    color: var(--front-font-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+$max-width: 800px;
+
+#front-page {
+    height: 100%;
+    max-width: $max-width;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 10px 40px 0;
+    z-index: 2;
+
+    h1 {
+        background-image: var(--front-nav-gradient);
+        font-size: 4rem;
+        margin: 0 20px;
+        filter: drop-shadow(-7px 7px 2px var(--box-shadow));
+        webkit-filter: drop-shadow(-7px 7px 2px var(--box-shadow));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #tagline {
+        color: var(--light-accent);
+        font-family: Inter, sans-serif;
+        font-weight: 100;
+        margin: 0 20px;
+    }
+    @mixin rounded-end($height: 50px) {
+        $border-radius: 0 ($height / 2) ($height / 2) 0;
+        height: $height;
+
+        &,
+        li:last-child,
+        li:last-child a {
+            border-radius: $border-radius;
+        }
+    }
+
+    nav {
+        width: 100%;
+        z-index: 2;
+
+        ul {
+            background-image: var(--front-nav-gradient);
+            box-shadow: -10px 10px 5px var(--box-shadow);
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            @include rounded-end($height: 75px);
+
+            li {
+                height: 100%;
+                flex: 1;
+
+                &:not(:first-child) {
+                    border-left: 10px solid var(--box-shadow);
+                }
+
+                a {
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                    color: var(--box-shadow);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.15rem;
+                    font-weight: 200;
+                    padding: 10px;
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        background-color: var(--hover-bg);
+                        color: var(--hover-font-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .search-bar-container {
+        max-width: 2/3 * $max-width;
+
+        #ajaxsearchlite1,
+        .probox {
+            border-radius: 0 40px 40px 0;
+        }
+
+        #ajaxsearchlite1 {
+            box-shadow: -10px 10px 5px var(--box-shadow);
+        }
+    }
+}
+
+#background {
+    background-image: var(--front-bg-gradient);
+    box-sizing: border-box;
+    text-align: right;
+
+    img {
+        max-height: 100%;
+        opacity: 0.4;
+    }
+}

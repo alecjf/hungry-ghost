@@ -1,0 +1,28 @@
+:root {
+    --light-accent: #f9e0d9;
+    --medium-accent: #7d6167;
+    --dark-accent: #5d4954;
+    --front-font-color: var(--light-accent);
+    --box-shadow: #222;
+    --link-color: #834156;
+    --custom-button-bg: var(--link-color);
+    --front-bg-gradient: linear-gradient(to top,
+            #111,
+            var(--dark-accent) 20%,
+            var(--medium-accent));
+    --front-nav-gradient: linear-gradient(to top,
+            var(--medium-accent),
+            var(--light-accent) 50%);
+    --nav-menu-active-gradient: linear-gradient(to right,
+            var(--medium-accent),
+            var(--light-accent) 20%);
+    --nav-menu-item-gradient: linear-gradient(to right,
+            var(--medium-accent),
+            var(--dark-accent) 20%);
+    --sub-header-bg: #fbede9;
+    --custom-header-bg: var(--light-accent);
+    --article-date-color: #999;
+    --article-font-color: #333;
+    --hover-bg: white;
+    --hover-font-color: var(--link-color);
+}
