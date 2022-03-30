@@ -29,7 +29,7 @@ Description: Theme for Alec's blog 'The Hungry Ghost'
         font-size: 1.15rem !important; }
 
 body {
-  height: 100%; }
+  min-height: 100%; }
 
 body,
 html {
@@ -37,7 +37,6 @@ html {
   color: #444;
   font-family: Inter, sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
   padding: 0; }
 
 a {
@@ -180,8 +179,9 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 20px; }
+    justify-content: center; }
+    #custom-header #custom-header-container.single {
+      gap: 20px; }
     #custom-header #custom-header-container > * {
       margin: 0 auto; }
     #custom-header #custom-header-container h1 {

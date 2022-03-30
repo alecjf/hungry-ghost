@@ -5,7 +5,7 @@ get_template_part("templates/template", "custom-header-image");
 <div class="with-sidebar">
     <section id="content">
         <header id="custom-header" class="custom-header-single-page">
-            <div id="custom-header-container">
+            <div id="custom-header-container" class="single">
                 <?php foreach (
                     wp_get_post_categories(get_the_ID())
                     as $cat_id

@@ -39,9 +39,6 @@ get_template_part("templates/template", "custom-header-image");
                 ?>
             </div>
         </header>
-        <div class="custom-sub-header">
-            <h2>Latest Posts</h2>
-        </div>
         <div id="content-container">
             <?php get_template_part("templates/template", "latest-posts"); ?>
             <div id="pagination">

@@ -17,7 +17,6 @@ get_template_part("templates/template", "custom-header-image");
                 <?php echo tag_description($tag->term_id); ?>
             </div>
         </header>
-        <h2 class="custom-sub-header">Latest Posts</h2>
         <div id="content-container">
             <?php get_template_part("templates/template", "latest-posts"); ?>
             <div id="pagination">

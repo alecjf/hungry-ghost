@@ -40,17 +40,15 @@ $spacing: 20px; // search bar overrides
 }
 
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body,
 html {
     margin: 0;
     color: #444;
-    // font-family: "Source Sans Pro", sans-serif;
     font-family: Inter, sans-serif;
     font-weight: 400;
-    overflow-x: hidden;
     padding: 0;
 }
 
@@ -261,7 +259,10 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: $spacing;
+
+        &.single {
+            gap: $spacing;
+        }
 
         & > * {
             margin: 0 auto;
