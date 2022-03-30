@@ -8,10 +8,8 @@
     <section class="search-bar-container">
         <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
     </section>
-</div>
-<div id="background">
-<img src="<?php echo get_site_icon_url(); ?>"
-    alt="The Hungry Ghost logo: profile of ghost with mouth open." />
+    <img src="<?php echo get_site_icon_url(); ?>"
+        alt="The Hungry Ghost logo: profile of ghost with mouth open." />
 </div>
 <?php get_footer();
 ?>

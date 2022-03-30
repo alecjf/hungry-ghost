@@ -1,26 +1,30 @@
 @import url(variables.css);
-body#front-page-body {
-  background-color: #111; }
+#front-page-body,
+html {
+  height: 100%; }
 
-#background,
-#front-page {
-  width: 100%;
-  color: var(--front-font-color);
-  position: absolute;
-  left: 0;
-  top: 0; }
-
-#front-page {
+#front-page-body #front-page {
   min-height: 100%;
-  max-width: 800px;
+  width: 100%;
+  background-image: var(--front-bg-gradient);
   box-sizing: border-box;
+  color: var(--front-font-color);
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   gap: 40px;
-  padding: 20px 10px 40px 0;
-  z-index: 2; }
-  #front-page h1 {
+  padding: 20px 10px 40px 0; }
+  #front-page-body #front-page > *:not(img) {
+    z-index: 2; }
+  #front-page-body #front-page img {
+    max-height: 100%;
+    width: auto;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1; }
+  #front-page-body #front-page h1 {
     background-image: var(--front-nav-gradient);
     font-size: 4rem;
     margin: 0 20px;
@@ -28,15 +32,16 @@ body#front-page-body {
     webkit-filter: drop-shadow(-7px 7px 2px var(--box-shadow));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
-  #front-page #tagline {
+  #front-page-body #front-page #tagline {
     color: var(--light-accent);
     font-family: Inter, sans-serif;
     font-weight: 100;
     margin: 0 20px; }
-  #front-page nav {
+  #front-page-body #front-page nav {
+    max-width: 800px;
     width: 100%;
     z-index: 2; }
-    #front-page nav ul {
+    #front-page-body #front-page nav ul {
       background-image: var(--front-nav-gradient);
       box-shadow: -10px 10px 5px var(--box-shadow);
       display: flex;
@@ -44,16 +49,16 @@ body#front-page-body {
       margin: 0;
       padding: 0;
       height: 75px; }
-      #front-page nav ul,
-      #front-page nav ul li:last-child,
-      #front-page nav ul li:last-child a {
+      #front-page-body #front-page nav ul,
+      #front-page-body #front-page nav ul li:last-child,
+      #front-page-body #front-page nav ul li:last-child a {
         border-radius: 0 37.5px 37.5px 0; }
-      #front-page nav ul li {
+      #front-page-body #front-page nav ul li {
         height: 100%;
         flex: 1; }
-        #front-page nav ul li:not(:first-child) {
+        #front-page-body #front-page nav ul li:not(:first-child) {
           border-left: 10px solid var(--box-shadow); }
-        #front-page nav ul li a {
+        #front-page-body #front-page nav ul li a {
           height: 100%;
           width: 100%;
           box-sizing: border-box;
@@ -67,33 +72,24 @@ body#front-page-body {
           text-align: center;
           text-decoration: none;
           text-transform: uppercase; }
-          #front-page nav ul li a:hover {
+          #front-page-body #front-page nav ul li a:hover {
             background-color: var(--hover-bg);
             color: var(--hover-font-color); }
-  #front-page .search-bar-container {
+  #front-page-body #front-page .search-bar-container {
     max-width: 533.3333333333px; }
-    #front-page .search-bar-container #ajaxsearchlite1,
-    #front-page .search-bar-container .probox {
+    #front-page-body #front-page .search-bar-container #ajaxsearchlite1,
+    #front-page-body #front-page .search-bar-container .probox {
       border-radius: 0 40px 40px 0; }
-    #front-page .search-bar-container #ajaxsearchlite1 {
+    #front-page-body #front-page .search-bar-container #ajaxsearchlite1 {
       box-shadow: -10px 10px 5px var(--box-shadow); }
 
-#background {
-  height: 100%;
-  background-image: var(--front-bg-gradient);
-  box-sizing: border-box;
-  text-align: right; }
-  #background img {
-    max-height: 100%;
-    opacity: 0.4; }
-
 @media only screen and (max-height: 500px) {
-  #front-page {
+  #front-page-body #front-page {
     gap: 20px;
     padding: 10px 10px 20px 0; }
-    #front-page nav {
+    #front-page-body #front-page nav {
       max-width: 533.3333333333px; }
-      #front-page nav ul {
+      #front-page-body #front-page nav ul {
         height: 60px; } }
 
 /*# sourceMappingURL=front-page.css.map */

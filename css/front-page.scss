@@ -1,137 +1,137 @@
 @import "variables.css";
-
-body#front-page-body {
-    background-color: #111;
-}
-
-#background,
-#front-page {
-    width: 100%;
-    color: var(--front-font-color);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
 $max-width: 800px;
 
-#front-page {
-    min-height: 100%;
-    max-width: $max-width;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px 10px 40px 0;
-    z-index: 2;
+#front-page-body,
+html {
+    height: 100%;
+}
 
-    h1 {
-        background-image: var(--front-nav-gradient);
-        font-size: 4rem;
-        margin: 0 20px;
-        filter: drop-shadow(-7px 7px 2px var(--box-shadow));
-        webkit-filter: drop-shadow(-7px 7px 2px var(--box-shadow));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    #tagline {
-        color: var(--light-accent);
-        font-family: Inter, sans-serif;
-        font-weight: 100;
-        margin: 0 20px;
-    }
-    @mixin rounded-end($height: 50px) {
-        $border-radius: 0 ($height / 2) ($height / 2) 0;
-        height: $height;
-
-        &,
-        li:last-child,
-        li:last-child a {
-            border-radius: $border-radius;
-        }
-    }
-
-    nav {
+#front-page-body {
+    #front-page {
+        min-height: 100%;
         width: 100%;
-        z-index: 2;
+        background-image: var(--front-bg-gradient);
+        box-sizing: border-box;
+        color: var(--front-font-color);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px 10px 40px 0;
 
-        ul {
+        & > *:not(img) {
+            z-index: 2;
+        }
+
+        img {
+            max-height: 100%;
+            width: auto;
+            opacity: 0.4;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        h1 {
             background-image: var(--front-nav-gradient);
-            box-shadow: -10px 10px 5px var(--box-shadow);
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            @include rounded-end($height: 75px);
+            font-size: 4rem;
+            margin: 0 20px;
+            filter: drop-shadow(-7px 7px 2px var(--box-shadow));
+            webkit-filter: drop-shadow(-7px 7px 2px var(--box-shadow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-            li {
-                height: 100%;
-                flex: 1;
+        #tagline {
+            color: var(--light-accent);
+            font-family: Inter, sans-serif;
+            font-weight: 100;
+            margin: 0 20px;
+        }
+        @mixin rounded-end($height: 50px) {
+            $border-radius: 0 ($height / 2) ($height / 2) 0;
+            height: $height;
 
-                &:not(:first-child) {
-                    border-left: 10px solid var(--box-shadow);
-                }
+            &,
+            li:last-child,
+            li:last-child a {
+                border-radius: $border-radius;
+            }
+        }
 
-                a {
+        nav {
+            max-width: $max-width;
+            width: 100%;
+            z-index: 2;
+
+            ul {
+                background-image: var(--front-nav-gradient);
+                box-shadow: -10px 10px 5px var(--box-shadow);
+                display: flex;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                @include rounded-end($height: 75px);
+
+                li {
                     height: 100%;
-                    width: 100%;
-                    box-sizing: border-box;
-                    color: var(--box-shadow);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.15rem;
-                    font-weight: 200;
-                    padding: 10px;
-                    text-align: center;
-                    text-decoration: none;
-                    text-transform: uppercase;
+                    flex: 1;
 
-                    &:hover {
-                        background-color: var(--hover-bg);
-                        color: var(--hover-font-color);
+                    &:not(:first-child) {
+                        border-left: 10px solid var(--box-shadow);
+                    }
+
+                    a {
+                        height: 100%;
+                        width: 100%;
+                        box-sizing: border-box;
+                        color: var(--box-shadow);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.15rem;
+                        font-weight: 200;
+                        padding: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            background-color: var(--hover-bg);
+                            color: var(--hover-font-color);
+                        }
                     }
                 }
             }
         }
-    }
 
-    .search-bar-container {
-        max-width: 2/3 * $max-width;
+        .search-bar-container {
+            max-width: 2/3 * $max-width;
 
-        #ajaxsearchlite1,
-        .probox {
-            border-radius: 0 40px 40px 0;
+            #ajaxsearchlite1,
+            .probox {
+                border-radius: 0 40px 40px 0;
+            }
+
+            #ajaxsearchlite1 {
+                box-shadow: -10px 10px 5px var(--box-shadow);
+            }
         }
-
-        #ajaxsearchlite1 {
-            box-shadow: -10px 10px 5px var(--box-shadow);
-        }
-    }
-}
-
-#background {
-    height: 100%;
-    background-image: var(--front-bg-gradient);
-    box-sizing: border-box;
-    text-align: right;
-
-    img {
-        max-height: 100%;
-        opacity: 0.4;
     }
 }
 @media only screen and (max-height: 500px) {
-    #front-page {
-        gap: 20px;
-        padding: 10px 10px 20px 0;
+    #front-page-body {
+        #front-page {
+            gap: 20px;
+            padding: 10px 10px 20px 0;
 
-        nav {
-            max-width: 2/3 * $max-width;
+            nav {
+                max-width: 2/3 * $max-width;
 
-            ul {
-                height: 60px;
+                ul {
+                    height: 60px;
+                }
             }
         }
     }
