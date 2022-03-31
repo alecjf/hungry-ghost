@@ -178,7 +178,7 @@ p {
             }
 
             .linked-thumbnail {
-                height: auto;
+                height: fit-content;
                 // max-height: 300px;
                 max-width: 50%;
                 width: auto;
@@ -186,7 +186,14 @@ p {
                 margin: 0 0 10px 10px;
 
                 & > a {
+                    height: fit-content;
+                    width: 100%;
                     display: flex;
+
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
                 }
 
                 .caption {

@@ -124,13 +124,18 @@ p {
         color: var(--article-date-color);
         font-style: italic; }
       #content #content-container article .linked-thumbnail {
-        height: auto;
+        height: fit-content;
         max-width: 50%;
         width: auto;
         float: right;
         margin: 0 0 10px 10px; }
         #content #content-container article .linked-thumbnail > a {
+          height: fit-content;
+          width: 100%;
           display: flex; }
+          #content #content-container article .linked-thumbnail > a img {
+            height: auto;
+            width: 100%; }
         #content #content-container article .linked-thumbnail .caption {
           background-color: var(--light-accent);
           padding: 2px 4px;
