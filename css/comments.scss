@@ -1,0 +1,25 @@
+#commentform {
+  &,
+  .comment-form-author,
+  .comment-form-comment {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .comment-form-comment {
+    margin: 0 0 10px;
+  }
+
+  .comment-form-name {
+    margin: 20px 0 10px;
+  }
+
+  .comment-notes {
+    display: none;
+  }
+}
+
+.single-comment {
+  border-bottom: 1.5px solid #aaa;
+  padding-bottom: 20px;
+}

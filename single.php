@@ -57,6 +57,37 @@ get_template_part("templates/template", "custom-header-image");
                     ?>
                 </section>
             </article>
+            <div id="comments">
+                <h2>Comments</h2>
+                <?php
+                if (comments_open() || get_comments_number()):
+                    comments_template();
+                endif;
+
+                $req = get_option('require_name_email');
+                $aria_req = $req ? " aria-required='true'" : '';
+
+                $fields = [
+                    'author' =>
+                        '<p class="comment-form-author">' .
+                        '<label for="author">' .
+                        __('Name') .
+                        ' *</label> ' .
+                        ($req ? '<span class="required">*</span>' : '') .
+                        '<input id="author" name="author" type="text" value="' .
+                        esc_attr($commenter['comment_author']) .
+                        '" size="30"' .
+                        $aria_req .
+                        ' /></p>',
+                    'cookies' => '',
+                ];
+
+                comment_form([
+                    'fields' => $fields,
+                    'class_submit' => 'custom-button-link',
+                ]);
+                ?>
+            </div>
             <div id="pagination">
                 <div id="previous-page">
                     <?php previous_post_link('%link', '<< %title', true); ?>

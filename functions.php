@@ -14,6 +14,11 @@ function load_styles_and_scripts()
         get_stylesheet_directory_uri() . '/css/front-page.css'
     );
 
+    wp_enqueue_style(
+        'comment-form-style',
+        get_stylesheet_directory_uri() . '/css/comments.css'
+    );
+
     wp_enqueue_script(
         "navigation_script",
         get_theme_file_uri("scripts/navigation.js"),
@@ -58,3 +63,20 @@ $args = [
     'width' => 1920,
 ];
 add_theme_support('custom-header' /*, $args */);
+
+// require name but not email for comments
+function require_comment_name($fields)
+{
+    if ($fields['comment_author'] == '') {
+        wp_die('Error: Please enter a valid name.');
+    }
+    return $fields;
+}
+add_filter('preprocess_comment', 'require_comment_name');
+
+// change comment form title
+function ocean_custom_comment_title( $defaults ){
+  $defaults['title_reply'] = __('Drop a Comment', 'oceanwp');
+  return $defaults;
+}
+add_filter('comment_form_defaults', 'ocean_custom_comment_title', 20);
