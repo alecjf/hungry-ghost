@@ -73,6 +73,44 @@ code {
     border-radius: 10px;
     padding: $spacing;
 }
+// email subscribe
+
+div.sib-email-area {
+    h3 {
+        margin: 15px auto 0;
+        text-align: center;
+    }
+
+    p.sib-email-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 8px;
+
+        input[type="submit"] {
+            background-color: var(--link-color);
+            border: 0;
+            border-radius: 5px;
+            color: var(--light-accent);
+            font-size: 1.1rem;
+            padding: 5px 15px;
+        }
+    }
+}
+
+#responsive-nav-menu div.sib-email-area {
+    background-color: var(--dark-accent);
+    border-top: 2px solid var(--link-color);
+    border-bottom: 2px solid var(--link-color);
+    margin-top: 40px;
+
+    &,
+    *:not(input[type="email"]) {
+        color: var(--light-accent);
+    }
+}
+// end email subscribe
 
 footer {
     background-color: var(--light-accent);
@@ -80,11 +118,11 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: $spacing;
+    // gap: $spacing;
     padding: ($spacing * 2) $spacing;
     text-align: center;
 
-    * {
+    & > * {
         margin: 0 auto;
     }
 
@@ -175,6 +213,12 @@ p {
             .date {
                 color: var(--article-date-color);
                 font-style: italic;
+            }
+
+            blockquote {
+                border-left: 7px solid var(--light-accent);
+                margin-left: 30px;
+                padding-left: 20px;
             }
 
             .linked-thumbnail {

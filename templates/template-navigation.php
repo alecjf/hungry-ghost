@@ -39,4 +39,5 @@ function navigation_recusive($cats)
             <?php navigation_recusive(my_categories(0)); ?>
         </li>
     </ul>
+    <?php dynamic_sidebar("email-subscribe-widget"); ?>
 </nav>

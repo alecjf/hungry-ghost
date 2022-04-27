@@ -5,7 +5,7 @@ $args = [
 ];
 
 // The comment Query
-$comments_query = new WP_Comment_Query();
+$comments_query = new WP_Comment_Query(['post_id' => get_the_ID()]);
 $comments = $comments_query->query($args);
 
 function format_local_date($timestamp)

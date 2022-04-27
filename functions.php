@@ -52,6 +52,16 @@ function learnwp_sidebars()
         'before_title' => '<h2 class="footer-title">',
         'after_title' => '</h2>',
     ]);
+
+    register_sidebar([
+        'name' => 'Email Subscribe Widget',
+        'id' => 'email-subscribe-widget',
+        'description' => 'This is the widget for the email subscribe form.',
+        'before_widget' => '<div class="email-subscribe-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="email-subscribe-title">',
+        'after_title' => '</h2>',
+    ]);
 }
 add_action('widgets_init', 'learnwp_sidebars');
 
@@ -75,8 +85,9 @@ function require_comment_name($fields)
 add_filter('preprocess_comment', 'require_comment_name');
 
 // change comment form title
-function ocean_custom_comment_title( $defaults ){
-  $defaults['title_reply'] = __('Drop a Comment', 'oceanwp');
-  return $defaults;
+function ocean_custom_comment_title($defaults)
+{
+    $defaults['title_reply'] = __('Drop a Comment', 'oceanwp');
+    return $defaults;
 }
 add_filter('comment_form_defaults', 'ocean_custom_comment_title', 20);
